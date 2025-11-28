@@ -1,0 +1,22 @@
+USE amor_empatas;
+
+-- Animais
+INSERT INTO Animal (nome, especie, idade, status) VALUES
+('Luna', 'Cachorro', 2, 'Disponível'),
+('Mingau', 'Gato', 1, 'Disponível'),
+('Thor', 'Cachorro', 4, 'Disponível'),
+('Nina', 'Gato', 3, 'Disponível');
+
+-- Adotantes
+INSERT INTO Adotante (nome, telefone, cidade) VALUES
+('Carlos Silva', '11988887777', 'São Paulo'),
+('Mariana Torres', '11999995555', 'Guarulhos'),
+('Ana Paula', '11912344321', 'Osasco');
+
+-- Adoções
+INSERT INTO Adocao (id_animal, id_adotante, data_adocao) VALUES
+(1, 2, '2025-02-10'),
+(3, 1, '2025-02-12');
+
+-- Atualiza status dos adotados
+UPDATE Animal SET status = 'Adotado' WHERE id_animal IN (1,3);
