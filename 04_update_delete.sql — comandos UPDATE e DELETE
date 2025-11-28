@@ -1,0 +1,28 @@
+USE amor_empatas;
+
+-- UPDATE 1: Alterar telefone de um adotante
+UPDATE Adotante
+SET telefone = '11970001234'
+WHERE id_adotante = 1;
+
+-- UPDATE 2: Corrigir idade de um animal
+UPDATE Animal
+SET idade = 5
+WHERE id_animal = 3;
+
+-- UPDATE 3: Mudar status de um animal de disponível para reservado
+UPDATE Animal
+SET status = 'Reservado'
+WHERE id_animal = 2;
+
+-- DELETE 1: Remover uma adoção específica
+DELETE FROM Adocao
+WHERE id_adocao = 1;
+
+-- DELETE 2: Excluir adotante sem adoções
+DELETE FROM Adotante
+WHERE id_adotante = 3;
+
+-- DELETE 3: Remover animal nunca adotado
+DELETE FROM Animal
+WHERE id_animal = 4;
