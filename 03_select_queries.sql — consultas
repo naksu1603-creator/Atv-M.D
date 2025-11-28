@@ -1,0 +1,26 @@
+USE amor_empatas;
+
+-- 1. Listar todos os animais disponíveis
+SELECT * FROM Animal
+WHERE status = 'Disponível'
+ORDER BY nome;
+
+-- 2. Buscar adotantes da cidade de Guarulhos
+SELECT nome, cidade FROM Adotante
+WHERE cidade = 'Guarulhos';
+
+-- 3. Listar adoções com nome do animal e adotante (JOIN)
+SELECT A.nome AS Animal, AD.nome AS Adotante, AC.data_adocao
+FROM Adocao AC
+JOIN Animal A ON AC.id_animal = A.id_animal
+JOIN Adotante AD ON AC.id_adotante = AD.id_adotante;
+
+-- 4. Mostrar apenas os 2 animais mais jovens
+SELECT * FROM Animal
+ORDER BY idade ASC
+LIMIT 2;
+
+-- 5. Animais que têm mais de 2 anos
+SELECT nome, idade FROM Animal
+WHERE idade > 2
+ORDER BY idade DESC;
